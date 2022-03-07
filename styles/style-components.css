@@ -1,0 +1,15 @@
+.button {
+  @apply w-56 h-12 bg-white rounded-sm border border-gray-900 text-gray-900 transition-all hover:bg-gray-900 hover:bg-opacity-10 select-none;
+}
+
+.button-primary {
+  @apply w-56 h-12 border-gray-900 text-white bg-gray-900 rounded-sm transition-all hover:border hover:text-gray-900 hover:bg-opacity-10 select-none;
+}
+
+.button-disabled {
+  @apply w-56 h-12 border-gray-900 border-opacity-20 border text-gray-900 text-opacity-60 select-none;
+}
+
+.text-clickable {
+  @apply cursor-pointer hover:text-emerald-500;
+}
