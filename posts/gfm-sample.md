@@ -1,6 +1,7 @@
 ---
 title: 'GFM Sample'
 date: '2022/03/07'
+tags: ['测试']
 ---
 
 # GFM

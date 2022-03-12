@@ -1,6 +1,7 @@
 ---
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-03-05'
+tags: ['测试']
 ---
 
 ## This is an <h2> tag

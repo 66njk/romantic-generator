@@ -1,6 +1,7 @@
 ---
 title: '测试文件，英语基础语法'
 date: '2022/03/07'
+tags: ['React', 'Vue', 'JavaScript']
 ---
 
 ## 1. 陈述句

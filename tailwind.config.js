@@ -6,6 +6,9 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      zIndex: {
+        '-1': '-1'
+      },
       colors: {
         gray: colors.neutral
       },
@@ -18,10 +21,14 @@ module.exports = {
       spacing: {
         '1.25': '0.305rem',
         '120': '30rem',
-        'cscreen': '768px'
+        'cscreen': '768px',
+        '720': '720px'
       },
       blur: {
-        'xxxl': '250px'
+        'xxxxl': '300px'
+      },
+      scale: {
+        '25': '0.25'
       }
     },
   },

@@ -1,0 +1,58 @@
+{
+  "navItems": [
+    {
+      "path": "/sample-reels",
+      "name": "作品"
+    },
+    {
+      "path": "/blog",
+      "name": "博客"
+    },
+    {
+      "path": "/sample3",
+      "name": "Sample 3"
+    },
+    {
+      "path": "/sample4",
+      "name": "Sample 4"
+    },
+    {
+      "path": "/about",
+      "name": "关于"
+    }
+  ],
+  "tagsColor": {
+    "Vue": {
+      "foreground": "#65B687",
+      "background": "rgba(120, 231, 166, 0.15)"
+    },
+    "React": {
+      "foreground": "#61C3E8",
+      "background": "rgba(130, 215, 247, 0.15)"
+    },
+    "Flutter": {
+      "foreground": "#4580EB",
+      "background": "rgba(128, 168, 241, 0.15)"
+    },
+    "SwiftUI": {
+      "foreground": "#4580EB",
+      "background": "rgba(128, 168, 241, 0.15)"
+    },
+    "Swift": {
+      "foreground": "#EC8247",
+      "background": "rgba(237, 134, 72, 0.15)"
+    },
+    "JavaScript": {
+      "foreground": "#ECCC3F",
+      "background": "rgba(246, 214, 72, 0.15)"
+    },
+    "CSS": {
+      "foreground": "#ECCC3F",
+      "background": "rgba(246, 214, 72, 0.15)"
+    },
+    "ReactNative": {
+      "foreground": "#61C3E8",
+      "background": "rgba(130, 215, 247, 0.15)"
+    }
+  }
+}

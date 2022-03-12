@@ -1,27 +1,31 @@
 /* Components */
 import Link from 'next/link'
 /* React */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 /* Custom Hooks */
 import { useScrollTop } from '../lib/hooks'
 /* Data */
-import { getNavItems } from '../lib/data/common.js'
+import data from '../lib/static.json'
 
-const Header = () => {
-  const [isActive, setIsActive] = useState(false)
+const Header = ({ home }) => {
+  /* 路由实例 */
+  const router = useRouter()
+  /* 滚动高度 */
   const scrollTop = useScrollTop()
-  const navItems = getNavItems()
+  /* 是否下拉 */
+  const [isActive, setIsActive] = useState(false)
 
   return (
     <>
-      <header className={`${scrollTop > 32 ? 'border-b' : ''} ${isActive ? 'h-screen' : 'h-20'} z-50 fixed flex flex-col items-center w-full md:h-20 border-gray-900 dark:border-gray-600 border-opacity-10 bg-white dark:bg-gray-700 overflow-hidden`}>
+      <header className={`${scrollTop > 32 ? 'border-b bg-white dark:bg-gray-700' : ''} ${isActive ? 'h-screen bg-white dark:bg-gray-600' : 'h-20'} z-50 fixed flex flex-col items-center w-full md:h-20 border-gray-900 dark:border-gray-600 border-opacity-10 overflow-hidden`}>
         <div className={`flex justify-between items-center max-w-cmw w-full h-20 px-4 ${isActive ? 'border-b border-gray-900 dark:border-gray-600 border-opacity-10' : ''}`}>
           <Link href='/'><h3 className='font-bold text-xl cursor-pointer text-gray-900 dark:text-white'>jamBoomChuu</h3></Link>
-          <nav className='absolute top-20 flex flex-col justify-start items-start w-full h-auto md:static md:flex-row md:justify-around md:items-center md:w-auto'>
-            {navItems.map((navItem, index) => {
+          <nav className='absolute top-40 flex flex-col justify-start items-start w-full h-auto md:static md:flex-row md:justify-around md:items-center md:w-auto'>
+            {data.navItems.map((navItem, index) => {
               return (
                 <Link href={navItem.path} key={index}>
-                  <div className='w-full my-4 text-2xl tracking-widest text-gray-900 dark:text-white text-opacity-100 hover:text-opacity-100 cursor-pointer md:w-auto md:mx-4 md:my-0 md:text-base md:text-opacity-70'>
+                  <div className={`${router.pathname === navItem.path ? 'text-emerald-500 md:text-opacity-100' : ''} w-full my-4 text-2xl tracking-widest text-gray-900 dark:text-white text-opacity-100 hover:text-opacity-100 cursor-pointer md:w-auto md:mx-4 md:my-0 md:text-base md:text-opacity-70`}>
                     {navItem.name}
                   </div>
                 </Link>
@@ -40,7 +44,7 @@ const Header = () => {
         </div>
       </header>
       {/* Placeholder */}
-      <div className='w-full h-20' />
+      {!home && <div className='w-full h-20' />}
     </>
   )
 }
