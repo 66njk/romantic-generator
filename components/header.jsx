@@ -18,7 +18,7 @@ const Header = ({ home }) => {
 
   return (
     <>
-      <header className={`${scrollTop > 32 ? 'border-b bg-white dark:bg-gray-700' : ''} ${isActive ? 'h-screen bg-white dark:bg-gray-600' : 'h-20'} z-50 fixed flex flex-col items-center w-full md:h-20 border-gray-900 dark:border-gray-600 border-opacity-10 overflow-hidden`}>
+      <header className={`${scrollTop > 32 ? 'border-b bg-white bg-opacity-90 backdrop-blur-xl dark:bg-gray-700' : ''} ${isActive ? 'h-screen bg-white dark:bg-gray-600' : 'h-20'} z-50 fixed flex flex-col items-center w-full md:h-20 border-gray-900 dark:border-gray-600 border-opacity-10 overflow-hidden`}>
         <div className={`flex justify-between items-center max-w-cmw w-full h-20 px-4 ${isActive ? 'border-b border-gray-900 dark:border-gray-600 border-opacity-10' : ''}`}>
           <Link href='/'><h3 className='font-bold text-xl cursor-pointer text-gray-900 dark:text-white'>jamBoomChuu</h3></Link>
           <nav className='absolute top-40 flex flex-col justify-start items-start w-full h-auto md:static md:flex-row md:justify-around md:items-center md:w-auto'>

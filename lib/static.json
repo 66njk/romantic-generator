@@ -1,7 +1,7 @@
 {
   "navItems": [
     {
-      "path": "/sample-reels",
+      "path": "/showcase",
       "name": "作品"
     },
     {
@@ -19,6 +19,32 @@
     {
       "path": "/about",
       "name": "关于"
+    }
+  ],
+  "showcaseCategory": [
+    {
+      "id": "all",
+      "name": "全部"
+    },
+    {
+      "id": "web-or-app",
+      "name": "Web / App"
+    },
+    {
+      "id": "ui-design",
+      "name": "UI设计"
+    },
+    {
+      "id": "graphic-design",
+      "name": "平面设计"
+    },
+    {
+      "id": "video",
+      "name": "视频"
+    },
+    {
+      "id": "others",
+      "name": "其它"
     }
   ],
   "tagsColor": {
@@ -56,3 +82,4 @@
     }
   }
 }
+

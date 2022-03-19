@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Head from 'next/head'
 import Image from "next/image"
-import Layout from '../components/layout.jsx'
+import Layout, { siteTitle } from '../components/layout.jsx'
 /* Static */
 import template from '../public/images/template.png'
 /* Functions */
@@ -26,11 +26,11 @@ const Post = ({ id, isLatest, title, date, tags }) => {
   })
 
   return (
-    <article className={`flex flex-col w-full h-auto border-b border-gray-900 dark:border-white dark:border-opacity-10 border-opacity-10 pb-6 mb-10 ${isLatest ? 'md:col-span-3 md:grid md:grid-cols-2 md:gap-x-12' : ''}`}>
+    <article className={`flex flex-col h-auto border-b border-gray-900 dark:border-white dark:border-opacity-10 border-opacity-10 pb-6 mb-10 ${isLatest ? 'md:col-span-3 md:grid md:grid-cols-2 md:gap-x-12' : ''}`}>
       {/* 预览图 */}
       <Link href={`/posts/${id}`}>
-        <div className={`relative mb-6 rounded-sm overflow-hidden cursor-pointer ${isLatest ? 'md:mb-0' : ''}`}>
-          <Image src={template} alt='article preview' />
+        <div className={`relative mb-6 overflow-hidden cursor-pointer ${isLatest ? 'md:mb-0' : ''}`}>
+          <Image className='rounded-md' src={template} alt='article preview' />
           <div className={`absolute top-0 left-0 flex justify-center items-center w-full h-full bg-emerald-500 bg-opacity-70 opacity-0 hover:opacity-100 transition-all overflow-hidden`}>
             <span className={`text-white text-2xl`}>查看</span>
           </div>
@@ -71,11 +71,11 @@ const Blog = ({ allPostsData }) => {
   return (
     <>
       <Head>
-        <title>博客 - 浪漫发生器</title>
+        <title>博客 - {siteTitle}</title>
       </Head>
       <Layout>
         <div className={`max-w-cmw min-h-screen mx-auto my-8 px-4`}>
-          <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 w-full h-auto'>
+          <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 w-full h-auto'>
             {allPostsData.map(({ id, date, title, tags }, index) => (
               <Post id={id} title={title} date={date} tags={tags} isLatest={index === 0 ? true : false} key={id} />
             ))}

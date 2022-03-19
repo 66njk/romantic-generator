@@ -27,7 +27,7 @@ const Home = () => {
           正在这里发生
         </p>
         <div className='flex flex-col items-center sm:flex-row'>
-          <div className='button-primary' onClick={() => router.push('/sample-reels')}>作品</div>
+          <div className='button-primary' onClick={() => router.push('/showcase')}>作品</div>
           <div className='button' onClick={() => router.push('/blog')}>博客</div>
         </div>
       </div>

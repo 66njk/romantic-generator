@@ -6,6 +6,9 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      transitionProperty: {
+        'transform+shadow': 'transform, shadow'
+      },
       zIndex: {
         '-1': '-1'
       },
