@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   content: [],
   theme: {
@@ -25,7 +25,8 @@ module.exports = {
         '1.25': '0.305rem',
         '120': '30rem',
         'cscreen': '768px',
-        '720': '720px'
+        '720': '720px',
+        '5625': '56.25%'
       },
       blur: {
         'xxxxl': '300px'

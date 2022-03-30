@@ -1,7 +1,7 @@
 /* Components */
 import Head from 'next/head'
-import Layout from '../../components/layout.jsx'
-import CodeBlock from '../../components/codeblock.jsx'
+import Layout from '../../components/layout'
+import CodeBlock from '../../components/codeblock'
 /* Functions */
 import { getAllPostIds, getPostData } from '../../lib/posts'
 /* Dependencies */
@@ -29,8 +29,16 @@ export async function getStaticProps({ params }) {
   }
 }
 
+type PostProps = {
+  postData: {
+    title: string,
+    date: string,
+    markdown: string
+  }
+}
+
 /* 页面组件 */
-export default function Post({ postData }) {
+const Post: React.FC<PostProps> = ({ postData }) => {
   return (
     <Layout>
       <Head>
@@ -66,3 +74,5 @@ export default function Post({ postData }) {
     </Layout>
   )
 }
+
+export default Post

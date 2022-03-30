@@ -1,13 +1,13 @@
 /* Components */
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout.jsx'
+import Layout, { siteTitle } from '../components/layout'
 import { useRouter } from 'next/router'
 
-const Home = () => {
+const Home: React.FC = () => {
   const router = useRouter()
 
   return (
-    <Layout home>
+    <Layout isHyaline>
       <Head>
         <title>{siteTitle}</title>
       </Head>

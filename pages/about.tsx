@@ -1,8 +1,8 @@
 /* Components */
 import Head from 'next/head'
-import Layout from '../components/layout.jsx'
+import Layout from '../components/layout'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <Layout>
       <Head>
