@@ -6,33 +6,22 @@ module.exports = {
   content: [],
   theme: {
     extend: {
-      transitionProperty: {
-        'transform+shadow': 'transform, shadow'
+      container: {
+        center: true,
+        padding: '1.25rem'
       },
       zIndex: {
         '-1': '-1'
       },
       colors: {
-        gray: colors.neutral
-      },
-      maxWidth: {
-        cmw: '1024px'
-      },
-      minHeight: {
-        'post': '7rem'
+        gray: colors.zinc
       },
       spacing: {
-        '1.25': '0.305rem',
         '120': '30rem',
-        'cscreen': '768px',
-        '720': '720px',
-        '5625': '56.25%'
-      },
-      blur: {
-        'xxxxl': '300px'
-      },
-      scale: {
-        '25': '0.25'
+        '160': '600px',
+        '112': '420px',
+        'smcreen': 'calc(100vw - 40px)',
+        'post-preview-h': 'calc((100vw - 40px) / 1.43)'
       }
     },
   },

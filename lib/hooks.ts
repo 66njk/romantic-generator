@@ -14,3 +14,24 @@ export function useScrollTop() {
   })
   return scrollTop
 }
+
+export function useTagsController(data: any) {
+  const [displayData, setDisplayData] = useState([])
+  const [selectedTag, setSelectedTag] = useState<string>('all')
+
+  useEffect(() => {
+    if (selectedTag === 'all') {
+      setDisplayData(data)
+    } else {
+      setDisplayData(data.filter((item) => {
+        for (const tag of item.tags) {
+          if (tag.value === selectedTag) {
+            return true
+          }
+        }
+      }))
+    }
+  }, [selectedTag])
+
+  return { displayData, selectedTag, setSelectedTag }
+}

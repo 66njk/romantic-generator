@@ -17,18 +17,18 @@ const Home: React.FC = () => {
           <br/>
           这是一个
           <br className='sm:hidden'/>
-          <span className='sm:pl-4 underline decoration-emerald-200 decoration-wavy underline-offset-auto rounded-sm'>
+          <span className='sm:pl-4 underline decoration-emerald-200 decoration-wavy decoration-[12px] underline-offset-auto rounded-sm'>
             个人博客
           </span>
         </h1>
         <p className='mb-8 text-xl text-gray-900 text-opacity-60 text-center leading-relaxed'>
-          一些有关于网页开发、UI设计的天马行空
+          {/* 一些有关于网页开发、UI设计的内容
           <br/>
-          正在这里发生
+          正在这里发生 */}
         </p>
         <div className='flex flex-col items-center sm:flex-row'>
-          <div className='button-primary' onClick={() => router.push('/showcase')}>作品</div>
-          <div className='button' onClick={() => router.push('/blog')}>博客</div>
+          <div className='button-primary' onClick={() => router.push('/posts')}>博客</div>
+          <div className='button' onClick={() => router.push('/showcase')}>作品</div>
         </div>
       </div>
     </Layout>

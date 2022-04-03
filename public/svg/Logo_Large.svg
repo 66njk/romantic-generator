@@ -1,0 +1,20 @@
+<svg shape-rendering="geometricPrecision" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_2_2)">
+    <ellipse cx="80" cy="48" rx="48" ry="48" transform="rotate(-90 80 48)" fill="url(#paint0_angular_2_2)"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M57.1184 70.0605C68.0889 63.4653 75.4286 51.4469 75.4286 37.7143C75.4286 16.8853 58.5433 0 37.7143 0C16.8853 0 0 16.8853 0 37.7143V96H75.4286L57.1184 70.0605Z" fill="url(#paint1_linear_2_2)"/>
+  </g>
+  <defs>
+    <radialGradient id="paint0_angular_2_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80 48) rotate(90) scale(48)">
+      <stop stop-color="#1E293B" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#1E293B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear_2_2" x1="0" y1="0" x2="75.4286" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E293B" stop-opacity="0.6"/>
+      <stop offset="0.510417" stop-color="#1E293B" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#1E293B" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip0_2_2">
+      <rect width="128" height="96" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

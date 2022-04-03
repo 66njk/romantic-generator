@@ -1,3 +1,4 @@
+
 type CustomSectionProps = {
   title: String
   children: React.ReactNode
@@ -6,9 +7,9 @@ type CustomSectionProps = {
 
 const CustomSection: React.FC<CustomSectionProps> = ({title, children, addStyle}) => {
   return (
-    <div className={`custom-section ${addStyle}`}>
-      <div className='custom-section-container'>
-        <h4 className='subhead'>{title}</h4>
+    <div className={`w-full h-auto border-b section-border ${addStyle}`}>
+      <div className='container py-4 lg:py-8'>
+        <h2 className='subhead'>{title}</h2>
         {children}
       </div>
     </div>

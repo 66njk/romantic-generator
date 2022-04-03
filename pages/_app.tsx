@@ -6,6 +6,7 @@ import NProgress from 'nprogress'
 import '../styles/global.css'
 import '../styles/style-components.css'
 import '../styles/nprogress.css'
+import '../styles/md-highlight.css'
 
 function App({ Component, pageProps }: AppProps) {
 
