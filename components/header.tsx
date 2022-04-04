@@ -26,37 +26,52 @@ const Header: React.FC<HeaderProps> = ({ isHyaline }) => {
 
   return (
     <>
-      <header className={`${scrollTop > 32 ? 'border-b bg-white dark:bg-gray-700' : ''} ${isActive ? 'h-screen bg-white dark:bg-gray-600' : 'h-20'} z-50 fixed w-full md:h-20 section-border overflow-hidden`}>
-        <div className={`flex justify-between items-center container h-20 ${isActive ? 'border-b border-gray-900 dark:border-gray-600 border-opacity-10' : ''}`}>
+      <header className={`${scrollTop > 32 ? 'border-b bg-white dark:bg-gray-700' : ''} z-50 fixed w-full md:h-20 section-border`}>
+        <div className={`flex justify-between items-center container h-20`}>
           <Link href='/'>
             <div>
-              <RGLogo className={`cursor-pointer w-auto h-8 mr-12 fill-current text-gray-900 hover:text-emerald-500 transition-colors`} />
+              <RGLogo className={`cursor-pointer w-auto h-8 mr-12 fill-current text-gray-900`} />
               <span className='sr-only'>RealGlow Logo</span>
             </div>
           </Link>
-          <nav className='absolute top-28 flex flex-col justify-start items-start w-smcreen sm:w-160 h-auto md:static md:flex-row md:justify-around md:items-center md:w-auto'>
+          <nav className='hidden lg:flex absolute top-28 flex-col justify-start items-start w-smcreen sm:w-160 h-auto md:static md:flex-row md:justify-around md:items-center md:w-auto'>
             {config.navItems.map((navItem, index) => {
               return (
                 <Link href={navItem.path} key={index}>
-                  <div className='flex justify-between items-center w-full'>
-                    {/* ${firstRouter === navItem.path ? 'md:underline decoration-dashed underline-offset-8 decoration-gray-500' : ''} */}
-                    <div className={`my-4 text-2xl tracking-widest text-gray-900 dark:text-white text-opacity-100 hover:text-opacity-100 cursor-pointer md:w-auto md:mx-4 md:my-0 md:text-base md:text-opacity-70`}>
-                      {navItem.name}
-                    </div>
-                    <ArrowToRight className='md:hidden w-6 h-6 m-2 fill-current text-gray-900 text-opacity-100' />
+                  {/* ${firstRouter === navItem.path ? 'md:underline decoration-dashed underline-offset-8 decoration-gray-500' : ''} */}
+                  <div className={`text-gray-900 dark:text-white hover:text-opacity-100 cursor-pointer w-auto mx-4 my-0 text-base text-opacity-70`}>
+                    {navItem.name}
                   </div>
                 </Link>
               )
             })}
           </nav>
           <div className='flex justify-center items-center'>
-            <button className='hidden md:block h-8 px-6 border-gray-900 text-sm text-white bg-gray-900 rounded-sm transition-all border hover:text-gray-900 hover:bg-opacity-10 select-none'>
+            <button className='hidden lg:block h-8 px-6 border-gray-900 text-sm text-white bg-gray-900 rounded-sm transition-all border hover:text-gray-900 hover:bg-opacity-10 select-none'>
               <span>找到我</span>
             </button>
-            <button onClick={() => setIsActive(!isActive)} className='flex flex-col justify-center items-center w-9 h-9 md:hidden'>
-              <div className={`w-6 h-[2px] bg-gray-900 dark:bg-white -translate-y-1 transition-all ease-in-out duration-200 rounded-lg ${isActive ? 'rotate-45 translate-y-[2px]' : ''}`} />
-              <div className={`w-6 h-[2px] bg-gray-900 dark:bg-white translate-y-1 transition-all ease-in-out duration-200 rounded-lg ${isActive ? '-rotate-45 translate-y-0' : ''}`} />
-            </button>
+            <div className='z-[1010] relative w-9 h-9 lg:hidden'>
+              <div className={`z-[1010] absolute right-0 top-[56px] w-smcreen max-w-[14rem] pr-0 bg-white shadow-2xl rounded-md transition-all ease-out duration-300 divide-y divide-gray-100 overflow-hidden origin-top-right will-change-transform ${isActive ? 'scale-100' : 'scale-0'} lg:hidden`}>
+                {config.navItems.map((navItem, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className={`flex items-center w-auto h-[4.5rem] ml-6 cursor-pointer text-base text-gray-900 font-semibold dark:text-white`}
+                      onClick={() => {
+                        router.push(navItem.path)
+                        navItem.path === firstRouter ? setIsActive(false) : {}
+                      }}
+                    >
+                      {navItem.name}
+                    </div>
+                  )
+                })}
+              </div>
+              <button onClick={() => setIsActive(!isActive)} className='flex flex-col justify-center items-center w-9 h-9 lg:hidden'>
+                <div className={`w-6 h-[2px] bg-gray-900 dark:bg-white -translate-y-1 transition-all ease-in-out duration-200 rounded-lg ${isActive ? 'rotate-45 translate-y-[2px]' : ''}`} />
+                <div className={`w-6 h-[2px] bg-gray-900 dark:bg-white translate-y-1 transition-all ease-in-out duration-200 rounded-lg ${isActive ? '-rotate-45 translate-y-0' : ''}`} />
+              </button>
+            </div>
           </div>
         </div>
       </header>

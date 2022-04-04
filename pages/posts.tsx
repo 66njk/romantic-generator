@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
-import WelcomeWidget from '../components/welcome'
+import Hero from '../components/hero'
 import Tags, { Tag } from '../components/tags'
 import CustomSection from '../components/custom-section'
 import Image from 'next/image'
@@ -70,7 +70,7 @@ type PostMiniProps = {
 
 const PostMini: React.FC<PostMiniProps> = ({ index, title, slug, createAt }) => {
   return (
-    <article className='flex mb-8 sm:pr-4'>
+    <article className='flex mb-6 sm:pr-4'>
       <span className='mr-4 text-3xl text-gray-200 font-semibold leading-none select-none'>
         {'0' + (index + 1).toString()}
       </span>
@@ -106,9 +106,9 @@ const Post: React.FC<PostProps> = ({ title, slug, preview, abstract, createAt })
   const router = useRouter()
   return (
     <article className='flex flex-col md:flex-row'>
-      <div className='relative flex-shrink-0 w-smcreen h-post-preview-h sm:w-160 sm:h-112 md:w-40 md:h-28 mb-4 md:mr-4 bg-gray-100'>
+      <div className='relative flex-shrink-0 w-smcreen h-post-preview-h sm:w-160 sm:h-112 md:w-40 md:h-28 mb-4 md:mr-4 bg-gray-100 overflow-hidden'>
         <Image
-          className='rounded-sm cursor-pointer hover:opacity-80'
+          className='rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300'
           src={preview.url}
           alt={`${title} 预览图片`}
           layout="fill"
@@ -148,7 +148,7 @@ const Blog: React.FC<BlogProps> = ({ posts, tags }) => {
         <title>博客 - {siteTitle}</title>
       </Head>
       <Layout isHyaline>
-        <WelcomeWidget
+        <Hero
           title='博客'
           description='向世界提问的方式'
           bgColor='bg-white'
@@ -168,14 +168,15 @@ const Blog: React.FC<BlogProps> = ({ posts, tags }) => {
             ))}
           </section>
         </CustomSection>}
-        <CustomSection title='分类' addStyle='md:hidden'>
-          <Tags tags={tags} state={[selectedTag, setSelectedTag]} />
-        </CustomSection>
         <div className='container py-8'>
+          <div className='md:hidden'>
+            <h2 className='subhead'>分类</h2>
+            <Tags tags={tags} state={[selectedTag, setSelectedTag]} />
+          </div>
           {posts.length > 0 ?
             <div className='grid grid-cols-12 gap-8'>
               {/* wrap-list */}
-              <section className='col-span-12 md:col-span-8 w-smcreen sm:w-160 md:w-auto my-8 space-y-12'>
+              <section className='col-span-12 md:col-span-8 w-smcreen sm:w-160 md:w-auto my-4 space-y-12'>
                 {displayData.map((post) => (
                   <Post
                     id={post.id}

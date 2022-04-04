@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className={`flex flex-col items-center container md:flex-row md:justify-between`}>
         <Link href='/'>
           <div>
-            <RGLogo className={`w-auto h-9 my-8 fill-current text-gray-900 hover:text-emerald-500 cursor-pointer transition-colors`} />
+            <RGLogo className={`w-auto h-9 my-8 fill-current text-gray-900 cursor-pointer`} />
             <span className='sr-only'>RealGlow Logo</span>
           </div>
         </Link>

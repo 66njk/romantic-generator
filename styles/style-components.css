@@ -1,13 +1,5 @@
 .button {
-  @apply flex justify-center items-center w-48 h-11 m-2 bg-white rounded-sm border border-gray-900 text-gray-900 transition-all hover:bg-gray-900 hover:bg-opacity-10 select-none cursor-pointer;
-}
-
-.button-primary {
-  @apply flex justify-center items-center w-48 h-11 m-2 border-gray-900 text-white bg-gray-900 rounded-sm transition-all hover:border hover:text-gray-900 hover:bg-opacity-10 select-none cursor-pointer;
-}
-
-.button-disabled {
-  @apply flex justify-center items-center w-48 h-11 m-2 border-gray-900 border-opacity-20 border rounded-sm text-gray-900 text-opacity-60 select-none cursor-pointer;
+  @apply flex justify-center items-center w-full h-14 rounded-sm space-x-[4px] lg:w-48 cursor-pointer select-none transition-colors;
 }
 
 .text-clickable {
@@ -15,7 +7,7 @@
 }
 
 .subhead {
-  @apply my-6 font-bold text-sm text-gray-900;
+  @apply my-4 font-bold text-sm text-gray-900 leading-none;
 }
 
 .section-border {

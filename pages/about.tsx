@@ -12,10 +12,8 @@ const Home: React.FC = () => {
       <Head>
         <title>关于 - 浪漫发生器</title>
       </Head>
-      <div className={`min-h-screen my-8`}>
-        <div className='flex justify-between'>
-          <Spline id={'spline'} style={{width: '200px', height: '200px'}} scene='https://draft.spline.design/RbGv1TgaYxmRhkuP/scene.spline' />
-        </div>
+      <div className={`container my-8`}>
+        Hey! 这是我的个人主页，这是我与世界建立联系的方式。
       </div>
     </Layout>
   )

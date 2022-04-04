@@ -6,7 +6,7 @@ type WelcomeWidgetProps = {
   children?: React.ReactNode
 }
 
-const WelcomeWidget: React.FC<WelcomeWidgetProps> = ({title, description, bgColor, children}) => {
+const Hero: React.FC<WelcomeWidgetProps> = ({title, description, bgColor, children}) => {
   return (
     <div>
       <div className={`w-full h-60 lg:h-96 border-b section-border ${bgColor}`}>
@@ -24,4 +24,4 @@ const WelcomeWidget: React.FC<WelcomeWidgetProps> = ({title, description, bgColo
   )
 }
 
-export default WelcomeWidget
+export default Hero
