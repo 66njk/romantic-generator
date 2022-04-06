@@ -29,8 +29,15 @@ model Post {
 }
 
 model Project {
-  id    String @id @default(cuid())
-  title String @default("")
+  id                String    @id @default(cuid())
+  title             String    @default("")
+  preview_filesize  Int?
+  preview_extension String?
+  preview_width     Int?
+  preview_height    Int?
+  preview_mode      String?
+  preview_id        String?
+  createAt          DateTime? @default(now())
 }
 
 model PostsTag {

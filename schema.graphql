@@ -53,26 +53,6 @@ input PostWhereUniqueInput {
   slug: String
 }
 
-type LocalImageFieldOutput implements ImageFieldOutput {
-  id: ID!
-  filesize: Int!
-  width: Int!
-  height: Int!
-  extension: ImageExtension!
-  ref: String!
-  url: String!
-}
-
-type CloudImageFieldOutput implements ImageFieldOutput {
-  id: ID!
-  filesize: Int!
-  width: Int!
-  height: Int!
-  extension: ImageExtension!
-  ref: String!
-  url: String!
-}
-
 input PostWhereInput {
   AND: [PostWhereInput!]
   OR: [PostWhereInput!]
@@ -215,10 +195,32 @@ input PostsTagRelateToManyForCreateInput {
 type Project {
   id: ID!
   title: String
+  preview: ImageFieldOutput
+  createAt: DateTime
 }
 
 input ProjectWhereUniqueInput {
   id: ID
+}
+
+type LocalImageFieldOutput implements ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  ref: String!
+  url: String!
+}
+
+type CloudImageFieldOutput implements ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  ref: String!
+  url: String!
 }
 
 input ProjectWhereInput {
@@ -227,15 +229,19 @@ input ProjectWhereInput {
   NOT: [ProjectWhereInput!]
   id: IDFilter
   title: StringFilter
+  createAt: DateTimeNullableFilter
 }
 
 input ProjectOrderByInput {
   id: OrderDirection
   title: OrderDirection
+  createAt: OrderDirection
 }
 
 input ProjectUpdateInput {
   title: String
+  preview: ImageFieldInput
+  createAt: DateTime
 }
 
 input ProjectUpdateArgs {
@@ -245,6 +251,8 @@ input ProjectUpdateArgs {
 
 input ProjectCreateInput {
   title: String
+  preview: ImageFieldInput
+  createAt: DateTime
 }
 
 type PostsTag {

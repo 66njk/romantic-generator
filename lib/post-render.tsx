@@ -1,5 +1,5 @@
 import { DocumentRendererProps } from "@keystone-6/document-renderer"
-import hljs from 'highlight.js'
+import hljs from 'highlight.js/lib/common'
 
 const renderers: DocumentRendererProps['renderers'] = {
   block: {

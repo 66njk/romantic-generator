@@ -106,9 +106,9 @@ const Post: React.FC<PostProps> = ({ title, slug, preview, abstract, createAt })
   const router = useRouter()
   return (
     <article className='flex flex-col md:flex-row'>
-      <div className='relative flex-shrink-0 w-smcreen h-post-preview-h sm:w-160 sm:h-112 md:w-40 md:h-28 mb-4 md:mr-4 bg-gray-100 overflow-hidden'>
+      <div className='relative flex-shrink-0 w-smcreen aspect-40/28 sm:w-160 sm:h-112 md:w-40 md:h-28 mb-4 md:mr-4 bg-gray-100 overflow-hidden'>
         <Image
-          className='rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300'
+          className='rounded-sm cursor-pointer hover:scale-110 transition-transform duration-500'
           src={preview.url}
           alt={`${title} 预览图片`}
           layout="fill"
@@ -150,10 +150,9 @@ const Blog: React.FC<BlogProps> = ({ posts, tags }) => {
       <Layout isHyaline>
         <Hero
           title='博客'
-          description='向世界提问的方式'
           bgColor='bg-white'
         />
-        {posts.length > 5 && <CustomSection title='推荐'>
+        {posts.length > 50 && <CustomSection title='推荐'>
           <section className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
             {posts.map((post, index) => (
               <PostMini
@@ -168,7 +167,7 @@ const Blog: React.FC<BlogProps> = ({ posts, tags }) => {
             ))}
           </section>
         </CustomSection>}
-        <div className='container py-8'>
+        <div className='container min-h-screen py-8'>
           <div className='md:hidden'>
             <h2 className='subhead'>分类</h2>
             <Tags tags={tags} state={[selectedTag, setSelectedTag]} />
@@ -176,7 +175,7 @@ const Blog: React.FC<BlogProps> = ({ posts, tags }) => {
           {posts.length > 0 ?
             <div className='grid grid-cols-12 gap-8'>
               {/* wrap-list */}
-              <section className='col-span-12 md:col-span-8 w-smcreen sm:w-160 md:w-auto my-4 space-y-12'>
+              <section className='col-span-12 md:col-span-8 w-smcreen sm:w-160 md:w-auto my-4 space-y-10 lg:space-y-8'>
                 {displayData.map((post) => (
                   <Post
                     id={post.id}

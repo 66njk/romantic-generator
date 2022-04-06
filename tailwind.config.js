@@ -6,6 +6,9 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      aspectRatio: {
+        '40/28': '40 / 28'
+      },
       container: {
         center: true,
         padding: '1.25rem'

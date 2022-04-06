@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className='z-10 relative container px-5 pt-32 h-screen sm:pt-32 md:pt-32 lg:pt-32'>
+      <div className='z-10 relative container px-5 pt-40 h-screen sm:pt-44'>
         <h1 className='mb-8 lg:mb-14 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 leading-tight break-words'>
           Web, design,
           <br/>

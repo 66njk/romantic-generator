@@ -76,7 +76,11 @@ const lists: Lists = {
   }),
   Project: list({
     fields: {
-      title: text({ validation: { isRequired: true } })
+      title: text({ validation: { isRequired: true } }),
+      preview: image(),
+      createAt: timestamp({
+        defaultValue: { kind: 'now' }
+      })
     }
   }),
   PostsTag: list({

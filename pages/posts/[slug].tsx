@@ -86,7 +86,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
           </div>
         </div>
         <div className='
-          mb-12 max-w-none prose prose-stone dark:prose-invert
+          mb-12 max-w-none prose prose-zinc dark:prose-invert
           prose-blockquote:not-italic prose-blockquote:font-normal 
           prose-blockquote:bg-gray-50 dark:prose-blockquote:bg-gray-700 
           dark:prose-blockquote:border-gray-500 prose-blockquote:py-1 
